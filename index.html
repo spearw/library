@@ -1,0 +1,68 @@
+<!doctype html>
+
+<html lang="en">
+<head>
+  <meta charset="utf-8">
+
+  <title>Book Cataloger</title>
+  <meta name="description" content="Somewhere to catalog what books you have in your library">
+  <meta name="author" content="William Spear">
+  <meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no">
+
+  <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.3.1/css/bootstrap.min.css" integrity="sha384-ggOyR0iXCbMQv3Xipma34MD+dH/1fQ784/j6cY/iJTQUOhcWr7x9JvoRxT2MZw1T" crossorigin="anonymous">
+  <link rel="stylesheet" href="css/styles.css?v=1.0">
+
+</head>
+
+<body>
+    
+   <div class = "input container">
+       <button class = "showForm" onclick="toggleForm()">Add a book</button>
+       <div id = "formContainer" class ="hide container-fluid">
+           <form action="javascript:newBook();">
+                <span>Title</span><br>
+                <input id="title" type="text"><br>
+                <span>Author</span><br>
+                <input id="author" type="text"><br>
+                <span>Pages</span><br>
+                <input id="pageNumber" type="text"><br>
+                <span>Read?</span><br>
+                <input id="haveIRead" type="checkbox"><br>
+                <input type="submit" value="submit">
+           </form>
+       </div>
+   </div>
+    
+   <div class = "container-fluid">
+        <table id="bookTable" class="table">
+            <tr class="row">
+                <!-- (make this the image - google search title+author+image and pull first result) -->
+                <th>Title</th>  
+                <th>Author</th>
+                <th>Pages</th>
+                <th>Read</th>
+                <th></th>
+            </tr>
+        </table>
+    </div>
+
+    <pre id="object"></pre>
+
+
+
+    <script src="https://www.gstatic.com/firebasejs/5.8.6/firebase.js"></script>
+    <script>
+    // Initialize Firebase
+    var config = {
+        apiKey: "AIzaSyBp5BgTnQ2zpIrhyQrOqv92NTym4nuQH7E",
+        authDomain: "book-list-b229f.firebaseapp.com",
+        databaseURL: "https://book-list-b229f.firebaseio.com",
+        projectId: "book-list-b229f",
+        storageBucket: "book-list-b229f.appspot.com",
+        messagingSenderId: "903800420605"
+    };
+    firebase.initializeApp(config);
+    </script>
+<script src="books.js"></script>
+</body>
+</html>
